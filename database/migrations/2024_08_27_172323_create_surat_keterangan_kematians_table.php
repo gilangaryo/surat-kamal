@@ -11,23 +11,34 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('surat_keterangan_kelahirans', function (Blueprint $table) {
-                $table->id();
+        Schema::create('surat_keterangan_kematians', function (Blueprint $table) {
+            $table->id();
                 $table->string('nama_kepala_keluarga')->nullable();
                 $table->string('nomor_kepala_keluarga')->nullable();
                 
-                // Baby/Anak details
-                $table->string('nama_bayi')->nullable();
-                $table->string('jenis_kelamin_bayi')->nullable();
-                $table->string('tempat_dilahirkan')->nullable();
+                // Jenazah details
+                $table->string('NIK')->nullable();
+                $table->string('nama_jenazah')->nullable();
+                $table->string('jenis_kelamin')->nullable();
+                $table->date('tanggal_lahir_jenazah')->nullable();
+                $table->integer('umur_jenazah')->nullable();
                 $table->string('tempat_kelahiran')->nullable();
-                $table->date('tanggal_lahir_bayi')->nullable();
-                $table->time('pukul_lahir')->nullable();
-                $table->string('jenis_kelahiran')->nullable();
-                $table->string('kelahiran_ke')->nullable();
-                $table->string('penolong_kelahiran')->nullable();
-                $table->decimal('berat_bayi', 5, 2)->nullable();
-                $table->decimal('panjang_bayi', 5, 2)->nullable();
+                $table->string('agama')->nullable();
+                $table->string('pekerjaan')->nullable();
+
+                $table->string('alamat_jenazah')->nullable();
+                $table->string('desa_kelurahan_jenazah')->nullable();
+                $table->string('kecamatan_jenazah')->nullable();
+                $table->string('kabupaten_kota_jenazah')->nullable();
+                $table->string('provinsi_jenazah')->nullable();
+
+                $table->string('anak_ke')->nullable();
+                $table->date('tanggal_kematian_jenazah')->nullable();
+                $table->time('pukul')->nullable();
+                $table->string('sebab_kematian')->nullable();
+                $table->string('tempat_kematian')->nullable();
+                $table->string('yang_menerangkan')->nullable();
+                
 
                 // Ayah details
                 $table->string('nik_ayah')->nullable();
@@ -36,8 +47,6 @@ return new class extends Migration
                 $table->integer('umur_ayah')->nullable();
                 $table->string('pekerjaan_ayah')->nullable();
                 $table->string('alamat_ayah')->nullable();
-                $table->string('kewarganegaraan_ayah')->nullable();
-                $table->string('kebangsaan_ayah')->nullable();
 
                 // Ibu details
                 $table->string('nik_ibu')->nullable();
@@ -46,10 +55,6 @@ return new class extends Migration
                 $table->integer('umur_ibu')->nullable();
                 $table->string('pekerjaan_ibu')->nullable();
                 $table->string('alamat_ibu')->nullable();
-                 $table->string('kewarganegaraan_ibu')->nullable();
-                $table->string('kebangsaan_ibu')->nullable();
-                $table->string('tgl_kawin')->nullable();
-
 
                 // Pelapor details
                 $table->string('nik_pelapor')->nullable();
@@ -118,6 +123,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('surat_keterangan_kelahirans');
+        Schema::dropIfExists('surat_keterangan_kematians');
     }
 };

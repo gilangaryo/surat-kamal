@@ -5,21 +5,32 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class surat_keterangan_kelahiran extends Model
+class surat_keterangan_kematian extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'nama_kepala_keluarga',
         'nomor_kepala_keluarga',
-        'nama_bayi',
-        'jenis_kelamin_bayi',
-        'tempat_dilahirkan',
+        'NIK',
+        'nama_jenazah',
+        'jenis_kelamin',
+        'tanggal_lahir_jenazah',
+        'umur_jenazah',
         'tempat_kelahiran',
-        'tanggal_lahir_bayi',
-        'pukul_lahir',
-        'jenis_kelahiran',
-        'penolong_kelahiran',
-        'berat_bayi',
-        'panjang_bayi',
+        'agama',
+        'pekerjaan',
+        'alamat_jenazah',
+        'desa_kelurahan_jenazah',
+        'kecamatan_jenazah',
+        'kabupaten_kota_jenazah',
+        'provinsi_jenazah',
+        'anak_ke',
+        'tanggal_kematian_jenazah',
+        'pukul',
+        'sebab_kematian',
+        'tempat_kematian',
+        'yang_menerangkan',
         'nik_ayah',
         'nama_ayah',
         'tanggal_lahir_ayah',
@@ -48,13 +59,6 @@ class surat_keterangan_kelahiran extends Model
         'umur_saksi2',
         'pekerjaan_saksi2',
         'alamat_saksi2',
-        'kewarganegaraan_ayah',
-        'kewarganegaraan_ibu',
-        'kebangsaan_ayah',
-        'kebangsaan_ibu',
-        'tgl_kawin',
-        'kelahiran_ke',
-
         'desa_kelurahan_ibu',
         'kabupaten_kota_ibu',
         'kecamatan_ibu',
@@ -75,11 +79,8 @@ class surat_keterangan_kelahiran extends Model
         'kabupaten_kota_saksi2',
         'kecamatan_saksi2',
         'provinsi_saksi2',
-
         'kode_wilayah',
-        'nomor_surat',
         'jabatan',
-
+        'nomor_surat',
     ];
-    use HasFactory;
 }
